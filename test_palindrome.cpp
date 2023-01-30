@@ -26,7 +26,7 @@ std::string randPalindrome(const int len, const int& correct) {
 int main()
 {
   srand(time(0));
-  
+
   // Iterative tests
   PalindromeI* p = new PalindromeI();
 
@@ -60,7 +60,7 @@ int main()
   std::cout << "Iter test 4 passed." << std::endl;
 
   // test 5: random palindromes so you cannot hard code them
-  
+
   for (int i = 0, len = rand_range, current = (rand() % (len / 2)) - 1; i < rand_range; ++i, len = rand_range, current = (rand() % (len / 2)) - 1)
     assert(p->test_string(randPalindrome(len, current)) == current);
   std::cout << "Iter test 5 passed." << std::endl;
@@ -69,7 +69,7 @@ int main()
 
   // cleanup
   delete p;
-  
+
   // Recursive tests
   PalindromeR* p1 = new PalindromeR();
 
@@ -103,7 +103,7 @@ int main()
   std::cout << "Recur test 4 passed." << std::endl;
 
   // test 5: random palindromes so you cannot hard code them
-  
+
   for (int i = 0, len = rand_range, current = (rand() % (len / 2)) - 1; i < rand_range; ++i, len = rand_range, current = (rand() % (len / 2)) - 1) {
     if (current >= 0)
 		assert(p1->test_string(randPalindrome(len, current)) == 1);
