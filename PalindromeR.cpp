@@ -1,12 +1,15 @@
+/*
+    PalindromeR.cpp
+
+    Implementation file for the PalindromeR class
+
+    For the recursive solution have test_string return -1 for a palindrome, 1 otherwise. Do not bother
+    trying to count the number of matches. Implement the recursive test as follows:
+*/
+
 #include "PalindromeR.hpp"
 #include <algorithm>
-#include <iostream>
 #include <string>
-
-/*
-For the recursive solution have test_string return -1 for a palindrome, 1 otherwise. Do not bother
-trying to count the number of matches. Implement the recursive test as follows:
-*/
 
 int PalindromeR::test_string(std::string s)
 {
