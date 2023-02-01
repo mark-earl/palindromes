@@ -10,7 +10,7 @@ class PalindromeR {
 
 public:
   PalindromeR() {}
-  int test_string(const std::string& s); 
+  int test_string(std::string s);
 };
 
 #endif
