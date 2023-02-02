@@ -39,7 +39,6 @@ class Queue
         // queue operations
         void enqueue(T);
         T dequeue();
-        T front() const;
         bool isEmpty() const
         {
             return numItems == 0;
@@ -139,21 +138,4 @@ T Queue<T>::dequeue()
         return item;
     }
 }
-
-template <class T>
-T Queue<T>::front() const
-{
-    // Check if the queue is empty
-    if (isEmpty())
-    {
-        throw "The queue is empty.\n";
-    }
-
-    // If there is something in the queue, return the front element
-    else
-    {
-        return queueArray[frontSubscript];
-    }
-}
-
 #endif // QUEUE_HPP
