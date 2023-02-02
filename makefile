@@ -12,7 +12,10 @@ PalindromeR.o: PalindromeR.cpp
 Stack.o: Stack.cpp
 	    ${CC} ${FLAGS} -c Stack.cpp
 
-palindrome.out: PalindromeI.o PalindromeR.o Stack.o test_palindrome.cpp
+Queue.o: Queue.cpp
+	    ${CC} ${FLAGS} -c Queue.cpp
+
+palindrome.out: PalindromeI.o PalindromeR.o Stack.o Queue.o test_palindrome.cpp
 		${CC} ${FLAGS} test_palindrome.cpp *.o -o palindrome.out
 
 clean:
