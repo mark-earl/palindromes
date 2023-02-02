@@ -43,7 +43,6 @@ class Stack
         void clear();
         void push(T);
         T pop();
-        T top() const;
 
         bool isEmpty() const
         {
@@ -157,20 +156,5 @@ T Stack<T>::pop()
         return item;
     }
 }
-
-template <class T>
-T Stack<T>::top() const
-{
-    StackNode *temp = nullptr;
-
-    // make sure the stack is not empty
-    if (isEmpty())
-    {
-        throw "The stack is empty.\n";
-    }
-
-    else return topPtr->value;
-}
-
 
 #endif // STACK_HPP
