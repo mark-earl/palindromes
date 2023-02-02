@@ -40,10 +40,6 @@ class Queue
         {
             return numItems == 0;
         }
-        int getSize() const
-        {
-            return numItems;
-        }
 };
 
 // Constructor
