@@ -28,7 +28,7 @@ class Queue
 
     public:
         // constructor
-        Queue(int);
+        Queue(int size);
 
         // copy constructor
         Queue(const Queue& obj);
@@ -40,8 +40,14 @@ class Queue
         void enqueue(T);
         T dequeue();
         T front() const;
-        bool isEmpty() const;
-        int getSize() const;
+        bool isEmpty() const
+        {
+            return numItems;
+        }
+        int getSize() const
+        {
+            return numItems;
+        }
 };
 
 #endif // QUEUE_HPP
