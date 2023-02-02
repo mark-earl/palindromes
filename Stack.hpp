@@ -45,11 +45,6 @@ class Stack
         {
             return topPtr == nullptr;
         }
-
-        int getSize() const
-        {
-            return stackSize;
-        }
 };
 
 template <class T>
