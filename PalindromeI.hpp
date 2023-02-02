@@ -1,5 +1,8 @@
-// palindromei.hpp -- iterative palindrome tester
-// c. 2015 A. Deeter
+/*
+    PalindromeI.hpp
+
+    Interface file for the PalindromeI class
+*/
 
 #ifndef PALINDROMEI_HPP
 #define PALINDROMEI_HPP

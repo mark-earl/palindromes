@@ -6,6 +6,7 @@
 
 #include "Queue.hpp"
 
+// Constructor
 template <class T>
 Queue<T>::Queue(int size)
 {
@@ -16,6 +17,7 @@ Queue<T>::Queue(int size)
     numItems = 0;
 }
 
+// Copy Constructor
 template <class T>
 Queue<T>::Queue(const Queue& obj)
 {
@@ -25,6 +27,7 @@ Queue<T>::Queue(const Queue& obj)
         queueArray = new T[obj.queueSize];
     }
 
+    // If the queue is empty
     else
     {
         queueArray = nullptr;
@@ -43,6 +46,7 @@ Queue<T>::Queue(const Queue& obj)
     }
 }
 
+// Destructor
 template <class T>
 Queue<T>::~Queue()
 {
@@ -53,6 +57,7 @@ Queue<T>::~Queue()
 template <class T>
 void Queue<T>::enqueue(T item)
 {
+    // Check if the queue is full
     if (numItems < queueSize)
     {
         // insert new item
@@ -74,6 +79,7 @@ void Queue<T>::enqueue(T item)
 template <class T>
 T Queue<T>::dequeue()
 {
+    // Check if the queue is empty
     if (isEmpty())
     {
         throw "The queue is empty.\n";
@@ -94,11 +100,13 @@ T Queue<T>::dequeue()
 template <class T>
 T Queue<T>::front() const
 {
+    // Check if the queue is empty
     if (isEmpty())
     {
         throw "The queue is empty.\n";
     }
 
+    // If there is something in the queue, return the front element
     else
     {
         return queueArray[frontSubscript];

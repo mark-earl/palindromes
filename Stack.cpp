@@ -59,20 +59,6 @@ void Stack<T>::clear()
 }
 
 template <class T>
-T Stack<T>::top() const
-{
-    StackNode *temp = nullptr;
-
-    // make sure the stack is not empty
-    if (isEmpty())
-    {
-        throw "The stack is empty.\n";
-    }
-
-    else return topPtr->value;
-}
-
-template <class T>
 void Stack<T>::push(T item)
 {
     // Pointer to a new node
@@ -120,4 +106,18 @@ T Stack<T>::pop()
         stackSize--;
         return item;
     }
+}
+
+template <class T>
+T Stack<T>::top() const
+{
+    StackNode *temp = nullptr;
+
+    // make sure the stack is not empty
+    if (isEmpty())
+    {
+        throw "The stack is empty.\n";
+    }
+
+    else return topPtr->value;
 }

@@ -42,7 +42,7 @@ class Queue
         T front() const;
         bool isEmpty() const
         {
-            return numItems;
+            return numItems == 0;
         }
         int getSize() const
         {
