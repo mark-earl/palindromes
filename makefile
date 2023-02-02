@@ -5,14 +5,17 @@ all: palindrome.out clean
 
 PalindromeI.o: PalindromeI.cpp
 	    ${CC} ${FLAGS} -c PalindromeI.cpp
-		
+
 PalindromeR.o: PalindromeR.cpp
 	    ${CC} ${FLAGS} -c PalindromeR.cpp
 
-palindrome.out: PalindromeI.o PalindromeR.o test_palindrome.cpp
+Stack.o: Stack.cpp
+	    ${CC} ${FLAGS} -c Stack.cpp
+
+palindrome.out: PalindromeI.o PalindromeR.o Stack.o test_palindrome.cpp
 		${CC} ${FLAGS} test_palindrome.cpp *.o -o palindrome.out
-		
-clean:  
+
+clean:
 	rm -f *.o
 	rm -f *~
 	rm -f \#*

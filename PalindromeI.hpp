@@ -6,11 +6,11 @@
 
 #include <string>
 
-class PalindromeI {
-
-public:
-  PalindromeI() {}
-  int test_string(const std::string& s); 
+class PalindromeI
+{
+    public:
+        PalindromeI() {}
+        int test_string(const std::string& s);
 };
 
 #endif
