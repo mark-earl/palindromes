@@ -96,6 +96,7 @@ Queue<T>::~Queue()
 {
     if (numItems > 0)
         delete [] queueArray;
+    queueArray = nullptr;
 }
 
 template <class T>
@@ -104,12 +105,10 @@ void Queue<T>::enqueue(T item)
     // Check if the queue is full
     if (numItems < queueSize)
     {
-        // insert new item
-        queueArray[rearSubscript] = item;
-
         // calculate the new rear position
         rearSubscript = (rearSubscript + 1) % queueSize;
-
+        // insert new item
+        queueArray[rearSubscript] = item;
         // update item count
         numItems++;
     }
@@ -131,10 +130,10 @@ T Queue<T>::dequeue()
 
     else
     {
-        // retreive the front item
-        T item = queueArray[frontSubscript];
         // move front
         frontSubscript = (frontSubscript + 1) % queueSize;
+        // retreive the front item
+        T item = queueArray[frontSubscript];
         // update item count
         numItems--;
         return item;

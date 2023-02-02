@@ -8,9 +8,17 @@
 #include "Stack.hpp"
 #include "PalindromeI.hpp"
 #include <string>
+#include <algorithm>
 
-int PalindromeI::test_string(const std::string& s)
+int PalindromeI::test_string(std::string s)
 {
+    // remove capital letters
+    std::transform(s.begin(), s.end(), s.begin(), ::tolower);
+    // remove punctuation
+    s.erase (std::remove_if (s.begin (), s.end (), ispunct), s.end ());
+    // remove spaces
+    s.erase(std::remove_if(s.begin(), s.end(), isspace), s.end());
+
     Queue<char> queue(s.length());
     Stack<char> stack;
 
@@ -37,6 +45,5 @@ int PalindromeI::test_string(const std::string& s)
             numOfMatches++;
         }
     }
-
     return -1;
 }

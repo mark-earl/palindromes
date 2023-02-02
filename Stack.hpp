@@ -36,6 +36,7 @@ class Stack
         ~Stack()
         {
             clear();
+            topPtr = nullptr;
         }
 
         // stack operations
