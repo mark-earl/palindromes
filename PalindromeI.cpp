@@ -11,32 +11,32 @@
 
 int PalindromeI::test_string(const std::string& s)
 {
-    // Queue<char> queue(s.length());
-    // Stack<char> stack;
+    Queue<char> queue(s.length());
+    Stack<char> stack;
 
-    // int numOfMatches = 0;
+    int numOfMatches = 0;
 
-    // // add all of the characters to the stack and queue, front to back
-    // for (char c:s)
-    // {
-    //     queue.enqueue(c);
-    //     stack.push(c);
-    // }
+    // add all of the characters to the stack and queue, front to back
+    for (char c:s)
+    {
+        queue.enqueue(c);
+        stack.push(c);
+    }
 
-    // while (!stack.isEmpty() && !queue.isEmpty())
-    // {
-    //     if (stack.pop() != queue.dequeue())
-    //     {
-    //         stack.~Stack();
-    //         queue.~Queue();
-    //         return numOfMatches;
-    //     }
+    while (!stack.isEmpty() && !queue.isEmpty())
+    {
+        if (stack.pop() != queue.dequeue())
+        {
+            stack.~Stack();
+            queue.~Queue();
+            return numOfMatches;
+        }
 
-    //     else
-    //     {
-    //         numOfMatches++;
-    //     }
-    // }
+        else
+        {
+            numOfMatches++;
+        }
+    }
 
     return -1;
 }
