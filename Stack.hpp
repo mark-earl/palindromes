@@ -29,9 +29,6 @@ class Stack
         // constructor
         Stack() {topPtr = nullptr; stackSize = 0;}
 
-        // copy constructor
-        Stack(const Stack& obj);
-
         // destructor
         ~Stack()
         {
@@ -54,40 +51,6 @@ class Stack
             return stackSize;
         }
 };
-
-// copy constructor
-template <class T>
-Stack<T>::Stack(const Stack& obj)
-{
-    if (obj.topPtr == nullptr)
-    {
-        topPtr = nullptr;
-    }
-
-    else
-    {
-        // Temp moves through nodes from top to bottom of obj
-        StackNode *temp;
-        StackNode *end;
-        temp = obj.topPtr;
-        end = new StackNode;
-        end->value = temp->value;
-        topPtr = end;
-
-        // First node created and fille with data
-        // New nodes are now added after this first node
-        temp = temp->next;
-        while (temp != nullptr)
-        {
-            end->next = new StackNode;
-            end = end->next;
-            end->value = temp->value;
-            temp = temp->next;
-        }
-        end->next = nullptr;
-        stackSize = obj.stackSize;
-    }
-}
 
 template <class T>
 void Stack<T>::clear()

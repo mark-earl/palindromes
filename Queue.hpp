@@ -30,9 +30,6 @@ class Queue
         // constructor
         Queue(int size);
 
-        // copy constructor
-        Queue(const Queue& obj);
-
         // destructor
         ~Queue();
 
@@ -58,35 +55,6 @@ Queue<T>::Queue(int size)
     frontSubscript = -1;
     rearSubscript = -1;
     numItems = 0;
-}
-
-// Copy Constructor
-template <class T>
-Queue<T>::Queue(const Queue& obj)
-{
-    // Allocate the queue size
-    if (obj.queueSize > 0)
-    {
-        queueArray = new T[obj.queueSize];
-    }
-
-    // If the queue is empty
-    else
-    {
-        queueArray = nullptr;
-    }
-
-    // Copy the other object's attributes
-    queueSize = obj.queueSizes;
-    frontSubscript = obj.frontSubscript;
-    rearSubscript = obj.rearSubscript;
-    numItems = obj.numItems;
-
-    // Copy the other's object's queue array
-    for (int count = 0; count < obj.queueSize; count++)
-    {
-        queueArray[count] = obj.queueArray[count];
-    }
 }
 
 // Destructor
