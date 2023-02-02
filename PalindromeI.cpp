@@ -11,7 +11,6 @@
 
 int PalindromeI::test_string(const std::string& s)
 {
-
     // Queue<char> queue(s.length());
     // Stack<char> stack;
 
