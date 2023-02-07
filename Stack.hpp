@@ -1,12 +1,14 @@
 /*
     Stack.hpp
 
-    Interface file for the stack class
+    Interface file AND implementation (because template class) for the stack class
 */
 
 #ifndef STACK_HPP
 #define STACK_HPP
 
+// template class allows for flexibility regarding the data it will store
+// this queue is implemented via a linked list (it grows and shrink in size)
 template <class T>
 class Stack
 {
@@ -32,25 +34,39 @@ class Stack
         // destructor
         ~Stack()
         {
+            // deallocate memory
             clear();
+
+            // handle dangling pointer
             topPtr = nullptr;
         }
 
         // stack operations
+
+        // deallocates memory
         void clear();
+
+        // add an item
         void push(T);
+
+        // remove an item
         T pop();
 
+        // check if the stack is empty
         bool isEmpty() const
         {
             return topPtr == nullptr;
         }
 };
 
+// deallocates the memory used by the linked list
 template <class T>
 void Stack<T>::clear()
 {
+    // for current node
     StackNode *nodePtr;
+
+    // for next node
     StackNode *nextNode;
 
     // position nodePtr at the top of the stack
@@ -65,13 +81,14 @@ void Stack<T>::clear()
     }
 }
 
+// add item to the stack
 template <class T>
 void Stack<T>::push(T item)
 {
-    // Pointer to a new node
+    // pointer to a new node
     StackNode *newNode = nullptr;
 
-    // Allocate a new node and store item there
+    // allocate a new node and store item there
     newNode = new StackNode;
     newNode->value = item;
 
@@ -89,9 +106,11 @@ void Stack<T>::push(T item)
         topPtr = newNode;
     }
 
+    // increase the stack size either way
     stackSize++;
 }
 
+// remove an element from the stack
 template <class T>
 T Stack<T>::pop()
 {
