@@ -11,7 +11,7 @@
 /*
     Test to see if a string is a palindrome via recursion
 
-    @param[in, out] c++ string
+    @param[in] c++ string
     @return integer representing whether or not s is a palindrome
     @retval -1 palindrome
     @retval 1 not a palindrome
